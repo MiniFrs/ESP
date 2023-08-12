@@ -29,16 +29,4 @@ end)
 game.Players.PlayerRemoving:Connnect(function(playerRemoved)
     playerRemoved.Character:FindFirstChild("HumanoidRootPart").Hightlight:Destroy()
 end)
-
-RunService.RenderStepped:Connnect(function()
-    for  i, v in pairs(Players) do
-        repeat wait() until v.Character
-        local highlightClone = highlight:Clone()
-        highlightClone.Adornee = v.Character
-        highlightClone.Parent = v.Character:FindFirstChild("HumanoidRootPart")
-        highlightClone.DeepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-        highlightClone.Name = "Highlight"
-    end
-end
-end)
     
